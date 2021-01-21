@@ -1,10 +1,15 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Navigation</router-link> |
-      <router-link to="/Information">Information</router-link> |
-      <router-link to="´/books/´ + book.id" v-for="book in books" :key="book.id">{{book.title}} | </router-link>
-    </nav>
+    <div>
+      <router-link  
+      :to="'/books/' + book.id" 
+      v-bind:style="{color:book.color}" 
+      v-for="book in books" :key="book.id">
+      <div class="container">
+          {{book.title}} | 
+      </div>
+      </router-link>
+    </div>
 
     <router-view/>
   </div>
@@ -12,6 +17,9 @@
 
 <script>
 export default {
+  // data() {
+  //   bookColor: book.color
+  // },
   computed: {
     books() {
       return this.$root.books
@@ -31,7 +39,6 @@ export default {
 
 #nav {
   padding: 30px;
-
   a {
     font-weight: bold;
     color: #2c3e50;
@@ -40,5 +47,15 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto;
+  width: 80px;
+  height: 150px;
+  background-color: yellow;
+  margin: 12px;
 }
 </style>
