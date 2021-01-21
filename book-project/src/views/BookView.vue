@@ -9,6 +9,7 @@
 
 <script>
     export default {
+        name: 'bookView',
         computed: {
             book() {
                 return this.$root.books.find(book => book.id == this.$route.params.id)

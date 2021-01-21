@@ -1,15 +1,12 @@
 <template>
-  <div id="app">
-    <div>
+    <div class="container">
       <router-link  
       :to="'/books/' + book.id" 
-      v-bind:style="{color:book.color}" 
       v-for="book in books" :key="book.id">
-      <div class="container">
-          {{book.title}} | 
+      <div class="container" v-bind:style="{backgroundColor: book.color}" >
+          {{book.title}}
       </div>
       </router-link>
-    </div>
 
     <router-view/>
   </div>
@@ -17,9 +14,7 @@
 
 <script>
 export default {
-  // data() {
-  //   bookColor: book.color
-  // },
+
   computed: {
     books() {
       return this.$root.books
@@ -29,33 +24,14 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
 
 .container {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto;
-  width: 80px;
-  height: 150px;
-  background-color: yellow;
+  width: 5rem;
+  height: 12rem;
   margin: 12px;
 }
+
 </style>
