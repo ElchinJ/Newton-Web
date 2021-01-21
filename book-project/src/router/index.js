@@ -1,14 +1,26 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BookView from '../views/BookView.vue'
+import BookInfo from '../views/BookInfo.vue'
+import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/books/:id',
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
+    path: '/books',
     name: 'BookView',
     component: BookView
+  },
+  {
+    path: '/books/:id',
+    name: 'BookInfo',
+    component: BookInfo
   },
 ]
 

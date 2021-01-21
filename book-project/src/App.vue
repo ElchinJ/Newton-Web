@@ -1,25 +1,15 @@
 <template>
-    <div class="container">
-      <router-link  
-      :to="'/books/' + book.id" 
-      v-for="book in books" :key="book.id">
-      <div class="container" v-bind:style="{backgroundColor: book.color}" >
-          {{book.title}}
+      <div id="app">
+        <Navigation/>
+        <router-view/>
       </div>
-      </router-link>
-
-    <router-view/>
-  </div>
 </template>
 
 <script>
-export default {
+import Navigation from '@/components/Navigation'
 
-  computed: {
-    books() {
-      return this.$root.books
-    }
-  }
+export default {
+  components: {Navigation},
 }
 </script>
 
@@ -29,9 +19,19 @@ export default {
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-template-rows: auto auto;
-  width: 5rem;
+  width: 7rem;
   height: 12rem;
   margin: 12px;
+
+  h2 {
+    font-size: 22px;
+    align-content: center;
+    text-decoration: none;
+  };
+  p {
+    font-size: 12px;
+    text-align: center;
+  }
 }
 
 </style>
