@@ -1,7 +1,10 @@
 <template>
     <article>
         <div v-if="book">
-            {{book.author}}
+            <div class="container" v-bind:style="{backgroundColor: book.color}">
+                {{book.author}}
+            </div>
+            
         </div>
         <div v-else>No book found</div>
     </article>
