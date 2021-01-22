@@ -2,10 +2,8 @@
         <div v-if="book">
             <article>
             <router-link
-            id="backBtn"
-            to="/books"
-            tag="button">
-            <input type="image" src="@/assets/backButton2.png"/>
+            to="/books">
+            <button><img id="backImage" src="../assets/backButton.png"></button>
             </router-link>
             <div class="singleBookContainer" v-bind:style="{backgroundColor: book.color}">
                 <span class="bookCover">
@@ -87,13 +85,6 @@
         text-align: left;
         }
     }
-    
-
-    #backBtn {
-        grid-column: 1;
-        grid-row: 1;
-        width: 3rem
-    }
 
     #readItBtn {
         grid-column: 2;
@@ -102,5 +93,10 @@
         margin: 0.5rem
     }
     
+    #backImage {
+        width: 2rem;
+        height: 2rem;
+        
+    }
     
 </style>
