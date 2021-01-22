@@ -1,7 +1,7 @@
 <template>
     <article>
         <div v-if="book">
-            <div class="container" v-bind:style="{backgroundColor: book.color}">
+            <div class="singleBookContainer" v-bind:style="{backgroundColor: book.color}">
                 {{book.author}}
             </div>
             
